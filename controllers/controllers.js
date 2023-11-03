@@ -11,7 +11,6 @@ exports.calendrier_get = async (req, res) => {
 	try {
 		let jours = [];
 		const { data } = await instance.get("/all");
-		console.log(data);
 		for (let i = 0; i < 24; i++) {
 			if (data[i]) {
 				jours.push([i + 1, data[i].score, data[i].valide]);
