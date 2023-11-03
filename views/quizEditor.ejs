@@ -1,0 +1,48 @@
+<%- include('components/header') %>
+
+<section id="quiz-editor">
+  <h1>Editeur de Quiz</h1>
+  <form action="/new-day" method="post">
+    <input type="text" value="[]" class="hide" name="questions">
+    <div class="bloc">
+      <label for="jour">Jour</label>
+      <input type="number" min="1" max="24" name="jour" placeholder="Enter le jour">
+    </div>
+    <div id="questions">
+      <h2>Questions</h2>
+      <% for(let i = 1; i < 6; i++) { %>
+      <div class="bloc">
+        <h3>Question <%=i%></h3>
+        <input type="text" name="<%=i%>" placeholder="Entrer l'intitulé de la question">
+        <select name="<%=i%>-couleur">
+          <option value="pink" selected>Rose</option>
+          <option value="blue">Bleu</option>
+          <option value="purple">Violet</option>
+          <option value="brown">Marron</option>
+          <option value="orange">Orange</option>
+          <option value="black">Noir</option>
+          <option value="yellow">Jaune</option>
+        </select>
+      </div>
+
+      <% for(let j = 1; j < 5; j++) { %>
+      <div class="bloc">
+        <label for="<%=i%>-rep-<%=j%>">Réponse <%=j%></label>
+        <input type="text" name="<%=i%>-rep-<%=j%>" placeholder="Entrer la réponse">
+      </div>
+      <% } %>
+      <select name="<%=i%>-rep">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <% } %>
+    </div>
+    <button type="submit" class="submit">Envoyer</button>
+  </form>
+</section>
+
+<script src="js/quizEditor.js"></script>
+
+<%- include('components/footer') %>

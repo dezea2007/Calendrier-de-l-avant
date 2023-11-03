@@ -1,0 +1,23 @@
+<%- include('components/header') %>
+
+<section id="quiz">
+  <h1>Quiz du <%=jour%></h1>
+  <div class="hide" id="questions"><%=JSON.stringify(questions)%></div>
+  <form action="/quiz/<%=jour%>" method="post">
+    <input type="text" class="hide" value="0" id="score-input" name="score">
+    <div class="card pink">
+      <div class="head">
+        <h2 id="question-text"></h2>
+        <h2 id="score"></h2>
+      </div>
+      <h2 id="question"></h2>
+      <div class="reponses"></div>
+      <button type="text" id="next">Suivante</button>
+      <button type="submit" class="hide" id="submit">Valider</button>
+    </div>
+  </form>
+</section>
+
+<script src="/js/quiz.js"></script>
+
+<%- include('components/footer') %>

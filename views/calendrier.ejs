@@ -1,0 +1,16 @@
+<%- include('components/header') %>
+
+<section id="calendrier">
+  <h1>Calendrier</h1>
+  <div class="calendrier">
+    <% jours.forEach(jour => { %>
+    <a href="quiz/<%=jour[0]%>" class="box">
+      <h3><%=jour[0]%></h3>
+      <i class="<% if (jour[0] == new Date().getDate() && !jour[2]) { %>fa-regular fa-clock<% } else if (jour[2]) { %>fa-solid fa-check<% } else { %>fa-solid fa-lock<% } %>"></i>
+      <p class="score">Score : <%= jour[1] %>/5</p>
+    </a>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('components/footer') %>

@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	background-color: #e1f2ff;
+}
+
+section {
+	width: 100%;
+	padding: 100px 0 0;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	font-size: 64px;
+	margin-bottom: 30px;
+	font-family: "Oswald", sans-serif;
+}
+
+p {
+	color: #333;
+	text-align: justify;
+}
+
+.hide {
+	display: none;
+}
+
+/* Navbar */
+.navbar {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	color: #333;
+	background-color: #fff;
+	box-shadow: 0 1px 0 #333;
+	z-index: 10;
+}
+
+.logo {
+	font-family: "Oswald", sans-serif;
+	font-size: 30px;
+}
+
+.list-items {
+	display: flex;
+	margin-right: 100px;
+}
+
+.list-items li {
+	list-style: none;
+	margin-left: 50px;
+}
+
+.list-items a::after {
+	content: "";
+	display: block;
+	bottom: -3px;
+	width: 100%;
+	height: 1px;
+	background-color: #333;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s ease-out;
+}
+
+.list-items a:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.hamburger {
+	display: none;
+}
+
+/* Header */
+#header {
+	display: flex;
+}
+
+.description {
+	padding: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 70%;
+}
+
+.description p {
+	margin-bottom: 50px;
+}
+
+.section-img {
+	max-width: 500px;
+	min-width: 400px;
+	border-right: 1px #333 solid;
+	background: url("/img/federer.jpg");
+	background-size: cover;
+}
+
+.btn {
+	padding: 10px 30px;
+	border: 3px #333 solid;
+	color: #333;
+	background-color: inherit;
+	border-radius: 30px;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+	color: #e1f2ff;
+	background-color: #333;
+}
+
+/* Calendrier */
+#calendrier {
+	height: 100%;
+	padding: 100px 30px 0;
+	text-align: center;
+}
+
+.calendrier {
+	display: grid;
+	margin-bottom: 30px;
+	height: 100%;
+	grid-template-columns: repeat(6, 1fr);
+	/* grid-template-rows: repeat(4, 1fr); */
+	gap: 30px;
+	place-items: center;
+}
+
+.box {
+	width: 100%;
+	aspect-ratio: 1;
+	border: 1px solid #333;
+	border-radius: 20px;
+	position: relative;
+	background-color: #fff;
+}
+
+.box h3 {
+	font-size: 35px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.box i {
+	font-size: 20px;
+	color: #777;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+.box .score {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+/* Score */
+#score {
+	display: flex;
+}
+
+#score .section-img {
+	border-right: none;
+	border-left: 1px solid #333;
+}
+
+/* Quiz */
+#quiz {
+	padding: 100px 30px 0;
+	text-align: center;
+}
+
+.card {
+	font-weight: 400;
+	border-radius: 20px;
+	padding: 20px;
+	max-width: 800px;
+	width: 60%;
+	margin: 50px auto;
+}
+
+.head {
+	display: flex;
+	justify-content: space-around;
+}
+
+#question {
+	margin: 20px 0;
+}
+
+.reponses {
+	width: 80%;
+	border-radius: 20px;
+	margin: 0 auto 20px;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+/* Couleurs */
+
+/* Rose */
+
+.pink {
+	color: white;
+	background-color: pink;
+}
+
+.pink .reponses,
+.pink #submit,
+.pink #next {
+	background-color: lightpink;
+}
+
+.pink .reponse:hover,
+.pink #submit:hover,
+.pink #next:hover {
+	background-color: #ffc5cd;
+}
+
+/* Bleu */
+
+.blue {
+	color: white;
+	background-color: rgb(45, 45, 182);
+}
+
+.blue .reponses,
+.blue #submit,
+.blue #next {
+	background-color: rgb(99, 99, 208);
+}
+
+.blue .reponse:hover,
+.blue #submit:hover,
+.blue #next:hover {
+	background-color: rgb(127, 127, 219);
+}
+
+/* Violet */
+
+.purple {
+	color: white;
+	background-color: rgb(177, 13, 177);
+}
+
+.purple .reponses,
+.purple #submit,
+.purple #next {
+	background-color: rgb(228, 72, 228);
+}
+
+.purple .reponse:hover,
+.purple #submit:hover,
+.purple #next:hover {
+	background-color: rgb(214, 53, 214);
+}
+
+/* Marron */
+
+.brown {
+	color: white;
+	background-color: rgb(84, 35, 35);
+}
+
+.brown .reponses,
+.brown #submit,
+.brown #next {
+	background-color: rgb(104, 60, 60);
+}
+
+.brown .reponse:hover,
+.brown #submit:hover,
+.brown #next:hover {
+	background-color: rgb(102, 69, 69);
+}
+
+/* Orange */
+
+.orange {
+	color: white;
+	background-color: rgb(255, 125, 4);
+}
+
+.orange .reponses,
+.orange #submit,
+.orange #next {
+	background-color: rgb(255, 157, 0);
+}
+
+.orange .reponse:hover,
+.orange #submit:hover,
+.orange #next:hover {
+	background-color: rgb(255, 178, 55);
+}
+
+/* Noir */
+
+.black {
+	color: white;
+	background-color: rgb(0, 0, 0);
+}
+
+.black .reponses,
+.black #submit,
+.black #next {
+	background-color: rgb(48, 48, 48);
+}
+
+.black .reponse:hover,
+.black #submit:hover,
+.black #next:hover {
+	background-color: rgb(96, 96, 96);
+}
+
+/* Jaune */
+
+.yellow {
+	color: black;
+	background-color: yellow;
+}
+
+.yellow .reponses,
+.yellow #submit,
+.yellow #next {
+	background-color: rgb(255, 255, 126);
+}
+
+.yellow .reponse:hover,
+.yellow #submit:hover,
+.yellow #next:hover {
+	background-color: rgb(231, 231, 32);
+}
+
+.yellow .reponse,
+.yellow #next,
+.yellow #submit {
+	color: black !important;
+}
+
+.yellow .reponse,
+.yellow #next,
+.yellow #submit,
+.yellow .reponses {
+	border-color: black;
+}
+
+.reponse {
+	padding: 15px;
+	border: none;
+	border-bottom: 1px solid white;
+	background-color: transparent;
+	color: white;
+	transition: background-color 0.25s;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+}
+
+.reponse:last-child {
+	border: none;
+}
+
+.reponse:first-child,
+.reponse:first-child {
+	border-radius: 20px 20px 0 0;
+}
+
+.reponse:last-child,
+.reponse:last-child {
+	border-radius: 0 0 20px 20px;
+}
+
+.success {
+	background-color: rgb(150, 225, 150);
+}
+
+.success:hover {
+	background-color: rgb(185, 224, 185) !important;
+}
+
+.failure {
+	background-color: coral;
+}
+
+.failure:hover {
+	background-color: lightcoral !important;
+}
+
+#next,
+#submit {
+	width: 80%;
+	margin: 0 auto;
+	padding: 15px 0;
+	border-radius: 20px;
+	border: 1px solid white;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.25s;
+}
+
+/* Editeur de quiz */
+#quiz-editor {
+	padding: 100px 30px 0;
+	height: 100%;
+	text-align: center;
+}
+
+#quiz-editor form {
+	width: 100%;
+}
+
+#quiz-editor label {
+	font-size: 20px;
+	display: block;
+}
+
+#quiz-editor input:not(.hide):not([type="checkbox"]) {
+	width: 90%;
+	padding: 10px;
+	border: 1px #333 solid;
+	outline: none;
+	border-radius: 5px;
+	display: block;
+}
+
+.submit {
+	padding: 10px 30px;
+	margin-bottom: 20px;
+	background-color: #333;
+	border: none;
+	border-radius: 20px;
+	color: #e1f2ff;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submit:hover {
+	background-color: #555;
+}
+
+.bloc {
+	margin-bottom: 20px;
+}
+
+/* 404 */
+
+#erreur-404,
+#interdit {
+	display: flex;
+}
+
+@media (max-width: 1080px) {
+	.calendrier {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
+@media (max-width: 952px) {
+	.calendrier {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media (max-width: 876px) {
+	.section-img {
+		display: none;
+	}
+
+	.description {
+		width: 100%;
+	}
+}
+
+@media (max-width: 776px) {
+	.list-items {
+		flex-direction: column;
+		align-items: flex-end;
+		position: absolute;
+		background: #fff;
+		border-left: 1px solid #333;
+		border-top: 1px solid #333;
+		top: 100%;
+		right: 0;
+		height: 100vh;
+		padding: 15px 20px 15px 50px;
+		transform: translateX(100%);
+	}
+
+	.open {
+		transform: translateX(0);
+	}
+
+	.list-items li {
+		margin: 10px 0;
+		font-size: 18px;
+	}
+
+	.hamburger {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		border: none;
+		display: flex;
+		background-color: #fff;
+		align-items: center;
+		position: relative;
+		right: 100px;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 100%;
+		height: 2px;
+		background-color: #333;
+		position: absolute;
+		pointer-events: none;
+		transition: opacity 0.3s 0.15s ease-out;
+	}
+
+	.hamburger span:nth-child(1),
+	.hamburger span:nth-child(3) {
+		transition: transform 0.3s ease-out;
+	}
+
+	.hamburger span:nth-child(1) {
+		transform: translateY(-7px);
+	}
+
+	.hamburger span:nth-child(3) {
+		transform: translateY(7px);
+	}
+
+	.list-items.open ~ .hamburger span:nth-child(1) {
+		transform: translate(0) rotate(135deg);
+	}
+
+	.list-items.open ~ .hamburger span:nth-child(2) {
+		opacity: 0;
+		transition: opacity 0s ease-out;
+	}
+
+	.list-items.open ~ .hamburger span:nth-child(3) {
+		transform: translate(0) rotate(-135deg);
+	}
+
+	.calendrier {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.calendrier h3 {
+		font-size: 20px;
+	}
+
+	.calendrier p,
+	.calendrier i {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 600px) {
+	h1 {
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.logo {
+		font-size: 25px;
+	}
+
+	.description {
+		padding: 50px;
+	}
+
+	.calendrier {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.calendrier p {
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,23 @@
+<%- include('components/header') %>
+
+<% if(valide) { %>
+<section id="interdit">
+  <div class="section-img"></div>
+  <div class="description">
+    <h1>Quiz déja fait</h1>
+    <p>Le quiz a déja été complété, tu ne peux pas le refaire.</p>
+    <a href="/calendrier" class="btn">Accéder au calendrier</a>
+  </div>
+</section>
+<% } else { %>
+<section id="interdit">
+  <div class="section-img"></div>
+  <div class="description">
+    <h1>Ce n'est pas pour aujourd'hui</h1>
+    <p>Le jour que tu as choisi n'est pas le bon nous ne sommes pas le <%= jour %>. Reviens plus tard.</p>
+    <a href="/calendrier" class="btn">Accéder au calendrier</a>
+  </div>
+</section>
+<% } %>
+
+<%- include('components/footer') %>
