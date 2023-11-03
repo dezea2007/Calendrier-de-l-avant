@@ -1,6 +1,6 @@
 const axios = require("axios");
 const instance = axios.create({
-	baseURL: "http://localhost:3000/api",
+	baseURL: "https://calendrier-de-l-avant.onrender.com/api",
 });
 
 exports.index_get = (req, res) => {
