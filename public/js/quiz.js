@@ -44,6 +44,8 @@ function ajouterButtons() {
 }
 
 function selectAnswer(e) {
+	e.preventDefault();
+	e.stopPropagation();
 	const selectedAnswer = e.target;
 	const isCorrect = selectedAnswer.dataset.correct === "true";
 	if (isCorrect) {
@@ -64,12 +66,15 @@ function selectAnswer(e) {
 	} else {
 		submitButton.classList.remove("hide");
 	}
+	return false;
 }
 
 nextButton.addEventListener("click", (e) => {
 	e.preventDefault();
+	e.stopPropagation();
 	currentId += 1;
 	reset();
+	return false;
 });
 
 reset();
