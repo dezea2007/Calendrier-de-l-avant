@@ -1,6 +1,6 @@
 const axios = require("axios");
 const instance = axios.create({
-	baseURL: "http://localhost:3000/api",
+	baseURL: "https://calendrier-de-l-avent.onrender.com/api",
 });
 
 exports.index_get = (req, res) => {
@@ -65,8 +65,7 @@ exports.quiz_get = (req, res) => {
 				res.render("interdit", {
 					valide: true,
 				});
-			}
-			else if (
+			} else if (
 				new Date().getDate() != data.data.jour &&
 				data.data.jour != 1
 			) {
@@ -74,8 +73,7 @@ exports.quiz_get = (req, res) => {
 					valide: false,
 					jour,
 				});
-			}
-			else {
+			} else {
 				res.render("quiz", {
 					jour: req.params.jour,
 					questions,
